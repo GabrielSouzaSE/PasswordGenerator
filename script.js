@@ -48,7 +48,7 @@ class GeradorDeSenha {
       return arrayValoresCheckbox;
     } else {
       alert("Selecione pelo menos uma opção!");
-      
+
     }
   }
 
