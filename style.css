@@ -5,6 +5,7 @@
   --primary-color-clearer: rgb(69, 216, 154);
   --secondary-color: rgb(128, 128, 128);
   --background-color-password: rgb(255, 255, 255);
+  --box-shadow-color: rgb(153, 153, 153);
 }
 
 * {
@@ -16,56 +17,56 @@ body {
   padding: 0;
   background: var(--primary-color);
   font-family: "Source Code Pro", sans-serif;
-  font-size: 1.3em;
-  line-height: 1.5em;
+  font-weight: bold;
 }
 
 input[type="number"] {
   width: 100%;
-  padding: 12px;
-  margin: 8px 0;
-  display: inline-block;
+  padding: 10px;
   border: 1px solid var(--secondary-color);
-  border-radius: 4px;
-  box-sizing: border-box;
+  border-radius: 10px;
+  margin-bottom: 10px;
 }
 
 button {
+  display: block;
   border: none;
   background: var(--primary-color);
   color: var(--background-color-password);
   font-size: 18px;
   font-weight: 700;
   height: 50px;
-  cursor: pointer;
-  margin-top: 30px;
   width: 100px;
-  margin-left: 40%;
+  margin: 20px auto;
   border-radius: 10px;
+  cursor: pointer;
 }
 
 form button:hover {
   background: var(--primary-color-clearer);
+  top: -4px;
+  box-shadow: 0 4px 3px var(--box-shadow-color);
 }
 
 .container {
+  display: flex;
+  flex-direction: column;
   width: 640px;
   overflow: auto;
   margin: 50px auto;
   background: var(--background-color-password);
   padding: 20px;
   border-radius: 10px;
-  line-height: 60px;
-}
-
-.formulario {
-  width: 600px;
+  line-height: 45px;
+  justify-content: center;
 }
 
 .resultado {
   color: var(--primary-color);
-  border-style: solid;
+  border: 1px solid var(--primary-color);
+  word-wrap: break-word;
   text-align: center;
+  margin-top: 20px;
 }
 
 .titulo {
@@ -73,9 +74,11 @@ form button:hover {
   text-align: center;
   text-transform: uppercase;
   font-weight: bold;
-  font-size: 50px;
+  font-size: 48px;
 }
 
-.numeroDeCaracteres {
-  width: 50px;
+@media only screen and (max-width: 640px) {
+  .container {
+    width: 100%;
+  }
 }
