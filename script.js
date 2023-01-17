@@ -19,46 +19,36 @@ class GeradorDeSenha {
     const checkboxValues = formulario.querySelectorAll(".checkbox");
     const arrayValoresCheckbox = [];
 
-    var valid = false;
-
-    if (document.getElementsByClassName("comNumeros checkbox").checked) {
-      valid = true;
-    } else if (
-      document.getElementsByClassName("comMaiusculas checkbox").checked
-    ) {
-      valid = true;
-    } else if (
-      document.getElementsByClassName("comMinuculas checkbox").checked
-    ) {
-      valid = true;
-    } else if (
-      document.getElementsByClassName("comSimbolos checkbox").checked
-    ) {
-      valid = true;
-    }
-
-    if (valid) {
-      alert("Sucesso");
-      for (let i = 0; i < checkboxValues.length; i++) {
-        if (checkboxValues[i].checked) {
-          arrayValoresCheckbox.push(checkboxValues[i].value);
-        }
+    for (let i = 0; i < checkboxValues.length; i++) {
+      if (checkboxValues[i].checked) {
+        arrayValoresCheckbox.push(checkboxValues[i].value);
       }
-
-      return arrayValoresCheckbox;
-    } else {
-      alert("Selecione pelo menos uma opção!");
-
     }
+    return arrayValoresCheckbox;
   }
 
   geraSenha() {
+    const numberValues = document.querySelector(".numeroDeCaracteres").value;
+
     (this.number = "0123456789"),
       (this.uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXTZ"),
-      (this.lowercase = "abcdefghiklmnopqrstuvwxyz");
-    this.simbolos = "*+?^$&()-/!;~[]#@_";
+      (this.lowercase = "abcdefghiklmnopqrstuvwxyz"),
+      (this.simbolos = "*+?^$&()-/[]!;~#@_");
+
+    if (numberValues.length >= 1) {
+      console.log(numberValues);
+    } else {
+      console.log(numberValues);
+      alert("Digite a quantidade de caracteres!");
+      return false;
+    }
 
     this.ValoresCheckbox = this.valoresCheckbox();
+    if (this.ValoresCheckbox.length == 0) {
+      alert("Selecione pelo menos um tipo de caractere!");
+      return false;
+    }
+    console.log("TIPO DO CHECKBOX(S):" + this.ValoresCheckbox);
     this.ValoresCheckbox = this.ValoresCheckbox.toString();
     this.ValoresCheckbox = this.ValoresCheckbox.replace(/,/g, " + ");
     this.ValoresCheckbox = eval(this.ValoresCheckbox);
