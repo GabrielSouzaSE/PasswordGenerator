@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300&display=swap");
+
+:root {
+  --primary-color: rgb(54, 126, 181);
+  --primary-color-clearer: rgb(69, 216, 154);
+  --secondary-color: rgb(128, 128, 128);
+  --background-color-password: rgb(255, 255, 255);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--primary-color);
+  font-family: "Source Code Pro", sans-serif;
+  font-size: 1.3em;
+  line-height: 1.5em;
+}
+
+input[type="number"] {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid var(--secondary-color);
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+button {
+  border: none;
+  background: var(--primary-color);
+  color: var(--background-color-password);
+  font-size: 18px;
+  font-weight: 700;
+  height: 50px;
+  cursor: pointer;
+  margin-top: 30px;
+  width: 100px;
+  margin-left: 40%;
+  border-radius: 10px;
+}
+
+form button:hover {
+  background: var(--primary-color-clearer);
+}
+
+.container {
+  width: 640px;
+  overflow: auto;
+  margin: 50px auto;
+  background: var(--background-color-password);
+  padding: 20px;
+  border-radius: 10px;
+  line-height: 60px;
+}
+
+.formulario {
+  width: 600px;
+}
+
+.resultado {
+  color: var(--primary-color);
+  border-style: solid;
+  text-align: center;
+}
+
+.titulo {
+  color: var(--primary-color);
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 50px;
+}
+
+.numeroDeCaracteres {
+  width: 50px;
+}
