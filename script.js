@@ -35,10 +35,7 @@ class GeradorDeSenha {
       (this.lowercase = "abcdefghiklmnopqrstuvwxyz"),
       (this.simbolos = "*+?^$&()-/[]!;~#@_");
 
-    if (numberValues.length >= 1) {
-      console.log(numberValues);
-    } else {
-      console.log(numberValues);
+    if (numberValues.length < 1) {
       alert("Digite a quantidade de caracteres!");
       return false;
     }
@@ -48,7 +45,6 @@ class GeradorDeSenha {
       alert("Selecione pelo menos um tipo de caractere!");
       return false;
     }
-    console.log("TIPO DO CHECKBOX(S):" + this.ValoresCheckbox);
     this.ValoresCheckbox = this.ValoresCheckbox.toString();
     this.ValoresCheckbox = this.ValoresCheckbox.replace(/,/g, " + ");
     this.ValoresCheckbox = eval(this.ValoresCheckbox);
